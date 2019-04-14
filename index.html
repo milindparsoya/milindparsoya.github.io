@@ -3,5 +3,15 @@
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+
+<script>
+navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
+.then(device => {
+  console.log(device.productName);      // "Arduino Micro"
+  console.log(device.manufacturerName); // "Arduino LLC"
+})
+.catch(error => { console.log(error); });
+
+</script>
 </body>
 </html>
