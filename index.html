@@ -16,9 +16,9 @@ var mydevice;
   .then(device => {
     console.log(device.productName);
     console.log(device.manufacturerName);
-    mydevice = device;
-    return mydevice.open()
+    console.log(device.configuration)
   })
+  .then(()=>mydevice.selectConfiguration(1))
   .catch(error => { console.log(error); });
 
   navigator.usb.getDevices().then(devices => {
