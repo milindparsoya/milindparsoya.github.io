@@ -4,13 +4,20 @@
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 
+<p id="demo"></p>
+
 <script>
-navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
-.then(device => {
-  console.log(device.productName);      // "Arduino Micro"
-  console.log(device.manufacturerName); // "Arduino LLC"
-})
-.catch(error => { console.log(error); });
+function myUSB(){
+  navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
+  .then(device => {
+    console.log(device.productName);      // "Arduino Micro"
+    console.log(device.manufacturerName); // "Arduino LLC"
+  })
+  .catch(error => { console.log(error); });
+}
+
+document.getElementByID("demo").innerHTML=myUSB();
+
 
 </script>
 </body>
