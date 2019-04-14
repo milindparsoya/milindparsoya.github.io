@@ -6,6 +6,7 @@
 
 <p id="demo"></p>
 
+<button onclick = "myUSB()"> Click me </button>
 <script>
 function myUSB(){
   navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
@@ -16,7 +17,6 @@ function myUSB(){
   .catch(error => { console.log(error); });
 }
 
-document.getElementByID("demo").innerHTML=myUSB();
 
 
 </script>
