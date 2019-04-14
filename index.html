@@ -9,15 +9,13 @@
 <button onclick = "myUSB()"> Click me </button>
 <script>
 function myUSB(){
-var device;
 
-navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
-.then(selectedDevice => {
-   device = selectedDevice;
-   return device.open(); // Begin a session.
- })
-.catch(error => { console.log(error); });
-}
+  navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
+  .then(device => {
+    console.log(device.productName);
+    console.log(device.manufacturerName); 
+  })
+  .catch(error => { console.log(error); });
 
 </script>
 </body>
