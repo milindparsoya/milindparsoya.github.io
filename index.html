@@ -17,6 +17,8 @@ var mydevice;
     console.log(device.productName);
     console.log(device.manufacturerName);
     console.log(device.configuration)
+    mydevice=device;
+    return mydevice.open()
   })
   .then(()=>mydevice.selectConfiguration(1))
   .catch(error => { console.log(error); });
