@@ -21,6 +21,7 @@ var mydevice;
     return mydevice.open()
   })
   .then(()=>mydevice.selectConfiguration(1))
+  .then(()=> mydevice.claimInterface(2))
   .catch(error => { console.log(error); });
 
   navigator.usb.getDevices().then(devices => {
