@@ -13,10 +13,11 @@ function myUSB(){
   navigator.usb.requestDevice({ filters: [{ vendorId: 0x046d }] })
   .then(device => {
     console.log(device.productName);
-    console.log(device.manufacturerName); 
+    console.log(device.manufacturerName);
   })
   .catch(error => { console.log(error); });
 
+}
 </script>
 </body>
 </html>
